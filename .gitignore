@@ -1,0 +1,48 @@
+/todo-backend/.idea
+/todo-backend/.mvn
+/todo-backend/.gitignore
+
+/todo-frontend/.vscode
+
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/todo-frontend/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+/todo-frontend/.idea/
+/todo-frontend/.project
+/todo-frontend/.classpath
+/todo-frontend/.c9/
+/todo-frontend/*.launch
+/todo-frontend/.settings/
+/todo-frontend/*.sublime-workspace
+
+# Visual Studio Code
+/todo-frontend/.vscode/*
+/todo-frontend/!.vscode/settings.json
+/todo-frontend/!.vscode/tasks.json
+/todo-frontend/!.vscode/launch.json
+/todo-frontend/!.vscode/extensions.json
+/todo-frontend/.history/*
+
+# Miscellaneous
+/todo-frontend//.angular/cache
+/todo-frontend/.sass-cache/
+/todo-frontend/connect.lock
+/todo-frontend/coverage
+/todo-frontend/libpeerconnection.log
+/todo-frontend/todo-frontend/testem.log
+/todo-frontend/typings
+
+# System files
+/todo-frontend/.DS_Store
+/todo-frontend/Thumbs.db

@@ -1,0 +1,72 @@
+<h1 class="">Spring Boot + Angular CRUOD</h1>
+<div class="container">
+  <form (ngSubmit)="createTask()">
+    <div class="row mt-5">
+      <div class="col-6 b-2-black">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="newTask.description"
+          name="newTaskDescription"
+          placeholder="enter task"
+        />
+      </div>
+      <div class="col-2">
+        <button class="btn btn-success" type="submit">Add Task</button>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-6">
+        <div *ngIf="!(tasks.length > 0); else taskList">
+          <h3>No data</h3>
+        </div>
+        <ng-template #taskList>
+          <ul class="list-group" *ngFor="let task of tasks">
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-6 bg-secondary text-light">
+                  <p>
+                    {{ task.description }}
+                  </p>
+                </div>
+                <div class="col-6">
+                  <button
+                    type="button"
+                    class="btn btn-light"
+                    (click)="editTask(task)"
+                  >
+                    Edit
+                  </button>
+                </div>
+                <div class="col-6">
+                  <div *ngIf="editingTask">
+                    <form (ngSubmit)="updateTask()">
+                      <label for="editTaskDescription">Edit Task : </label>
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          [(ngModel)]="updatedTask.description"
+                          class="form-control"
+                          id="editTaskDescription"
+                        />
+                      </div>
+                      <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-success mx-2">
+                          Save
+                        </button>
+                        <button type="button" class="btn btn-danger" (click)="cancelEdit()">
+                          Cancel
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </ng-template>
+      </div>
+    </div>
+  </form>
+</div>
